@@ -6,7 +6,7 @@ latest 6 bitcoin prices. You can set a minimum threshold value so that if the BT
 immediate alert message showing the price. </ul>
 
 <h1>What will we need ? </h1>
-<ul>A coinmarketcap.com API key. Because we are going to make use of their API to get the latest bitcoin price.</ul>
+<ul>A coinmarketcap.com <code>API key</code>. Because we are going to make use of their API to get the latest bitcoin price.</ul>
 <ul>The telegram app, and your account's <code>chat_id.</code></ul>
 <ul>Then a telegram bot and it's token key. Without a bot, you will not be able to send programmatic messages. In short, if you want to send price notifications from our python script to your telegram account, then you need a telegram bot.</ul>
 <ul>Finally Python3, pip3, and a Text editor of your choice.</ul>
@@ -55,17 +55,17 @@ Click on the link to your bot which the BotFather gave you<br>
 Click on that link and send a <code>/start</code> command to activate it.<br></p>
 
 <p>That's it, you have created your own bot and successfully activated it!</p>
-<p>The token you got for your bot is a string that will look something like this - <code>110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw.</code> This token is required to authorize the bot and send requests to the Bot API. Keep your token secure and store it safely, it can be used by anyone to control your bot 😱.</p>
+<p>The token you got for your bot is a string that will look something like this - <code>110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw.</code> This token is required to authorize the bot and send requests to the <code>Bot API</code>. Keep your token secure and store it safely, it can be used by anyone to control your bot 😱.</p>
 <p>Awesome! Now you have your bot and importantly its token key. Save it for later use. </p>
 
 
-<h1>Getting your chat_id</h1>
-<p>The next step is to obtain your telegram chat_id. You can get that easily through a ready-made bot called 'IDBot':</p>
+<h1>Getting your <code>chat_id</code></h1>
+<p>The next step is to obtain your telegram <code>chat_id</code>. You can get that easily through a ready-made bot called 'IDBot':</p>
 <p>Search in the telegram app for 'IDBot'. Its icon will be something like this:
 
 IDBot's icon<br>
-Now click on that bot and type a message exactly like this /getid. This /getid command will get your chat_id.<br>
-Awesome again! Now you have your chat_id, save this somewhere because we will need this later.<br></p>
+Now click on that bot and type a message exactly like this <code>/getid.</code> This <code>/getid</code> command will get your <code>chat_id.</code><br>
+Awesome again! Now you have your <code>chat_id</code>, save this somewhere because we will need this later.<br></p>
 
 <h1>3). Fitting everything together</h1>
 <h3>Make sure you have Python3.4+ and pip3 installed.</h3>
@@ -74,11 +74,26 @@ Awesome again! Now you have your chat_id, save this somewhere because we will ne
 <p>First, create a folder named crypto_tracker anywhere on your computer.
 </p>
 <p>Then open pycharm</p>
-<p>Create a file named tracker.py</p>
-<p>Then we are setting some global variables:
+<p>Create a file named <code>tracker.py</code></p>
+<p>We have to make some HTTP requests from this script, so we need a python module named requests, so let's install it.</p>
+<p>Type the following command in the terminal to install the requests module:
+  <code>pip install requests</code>
+</p>
+<p>Copy My code from the Github repo</p>
+<p>Then we are changeing some global variables:
 
-api_key = 'put_your_coinmarketcap_api_key_here_which_we_first_obtained'
-bot_token = 'put_your_own_telegram_bot_token'
-chat_id = 'put_your_telegram_chat_id'
-threshold = put the minimum threshold bitcoin price
-time_interval = in seconds. Here I used 5 minutes. That means, my script will make an API request every 5 minutes and stores the price in a python list. Remember you can only make 333 free requests per day, keep that always in mind.</p>
+<code>api_key</code> = 'put_your_coinmarketcap_api_key_here_which_we_first_obtained'<br>
+<code>bot_token</code> = 'put_your_own_telegram_bot_token'<br>
+<code>chat_id</code> = 'put_your_telegram_chat_id'<br>
+<code>threshold</code> = put the minimum threshold bitcoin price<br>
+<code>time_interval</code> = in seconds.<br> Here I used 5 minutes. That means, my script will make an API request every 5 minutes and stores the price in a python list.<br> Remember you can only make 333 free requests per day, keep that always in mind.</p>
+
+<h1>Let's run it...</h1>
+<p>Now let's run our script. In the terminal, type: <code>
+python tracker.py</code></p>
+
+<p>If everything is all right, then you will receive a message every 30 minutes!<br>
+
+Try tweaking the <code>time_limit</code> and <code>threshold </code>value to get immediate messages. But always keep the free API limit in your mind! You can deploy this online on any server and get real-time notifications too.<p>
+  
+  <h1>THANKS FOR WATCHING MY PROJECT</h1>
